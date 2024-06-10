@@ -29,9 +29,9 @@ const TrackingCards = () => {
       <div className="grid grid-cols-3 gap-x-1 mb-2">
         {activityCards.map((item, index) => {
           return (
-            <div className="grid grid-cols-1 bg-[#FFFFFF]/[0.04] p-1.5 rounded-lg text-white text-center" key={index}>
+            <button className="grid grid-cols-1 bg-[#FFFFFF]/[0.04] p-1.5 rounded-lg text-white text-center" key={index}>
               <div className='mb-8'>
-                <img src={item.imageUrl} alt="" />
+                <img src={item.imageUrl} alt={item.title} />
               </div>
 
               <div className='flex flex-col justify-start text-left mb-2'>
@@ -41,32 +41,35 @@ const TrackingCards = () => {
 
               <div className='flex justify-between items-center'>
                 <p className="text-base leading-4 text-left">{item.score}</p>
-                <button className="size-6 bg-[#384D00] rounded-lg text-[#BBFF00]">
-                  <img src={IconAdd} alt="" />
+                <button className="flex justify-center items-center size-6 bg-[#384D00] rounded-lg text-[#BBFF00]">
+                  <img src={IconAdd} alt="плюсик" className='size-4' />
                 </button>
               </div>
-            </div>
+            </button>
           )
         })}
       </div>
 
       <div className="grid grid-cols-2 grid-rows-1 gap-x-2">
-        <div className="card bg-[#FFFFFF]/[0.04] p-4 rounded-lg text-white text-center">
+
+        <button className="card bg-[#FFFFFF]/[0.04] p-4 rounded-lg text-white text-center">
           <div className='flex justify-start items-center gap-x-2.5'>
             <div>
-              <img src={IconBasketball} alt="" />
+              <img src={IconBasketball} alt="мячик" />
             </div>
             <p className='text-xs leading-[14px] font-normal'>Тренировка</p>
           </div>
-        </div>
-        <div className="card bg-[#FFFFFF]/[0.04] p-4 rounded-lg text-white text-center">
+        </button>
+
+        <button className="card bg-[#FFFFFF]/[0.04] p-4 rounded-lg text-white text-center">
           <div className='flex justify-start items-center gap-x-2.5'>
             <div>
-              <img src={IconMidnight} alt="" />
+              <img src={IconMidnight} alt="луна" />
             </div>
             <p className='text-xs leading-[14px] font-normal'>Отдых</p>
           </div>
-        </div>
+        </button>
+
       </div>
     </div>
   );

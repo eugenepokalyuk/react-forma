@@ -14,7 +14,7 @@ const Recommendations = () => {
                     <div className="bg-[#FFFFFF]/[0.04] text-white row-span-2 p-3 rounded-xl space-y-4 flex flex-col justify-between">
                         <div>
                             <div>
-                                <img src={IconMoon} alt="" />
+                                <img src={IconMoon} alt="луна" />
                             </div>
 
                             <div className='space-y-1.5'>
@@ -32,7 +32,7 @@ const Recommendations = () => {
                         </div>
 
                         <div className='flex justify-end'>
-                            <img src={ImageChart} className='' alt="" />
+                            <img src={ImageChart} className='rounded-br-xl' alt="график" />
                         </div>
                     </div>
 
@@ -44,7 +44,7 @@ const Recommendations = () => {
 
                 <div className="relative flex flex-col justify-between items-start min-h-44 bg-[#FFFFFF]/[0.04] text-white p-3 rounded-xl overflow-hidden">
                     <div className='absolute -bottom-10 -right-10'>
-                        <img src={ImageFood} className='size-36' alt="" />
+                        <img src={ImageFood} className='size-36' alt="рамен" />
                     </div>
 
                     <div className='w-[200px] space-y-1.5'>
@@ -52,7 +52,7 @@ const Recommendations = () => {
                         <p className='text-[#FFFFFF]/[.32] text-xs font-normal leading-[14px]'>Рецепты курируются диетологами</p>
                     </div>
 
-                    <button className="bg-[#BBFF00] text-[#444444] py-[9px] px-[21px] rounded-lg w-auto">Смотреть</button>
+                    <button className="bg-[#BBFF00] text-[#444444] py-[9px] px-[21px] rounded-lg w-auto text-xs font-normal leading-[14px]">Смотреть</button>
                 </div>
             </div>
         </div>

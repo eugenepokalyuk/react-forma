@@ -6,7 +6,7 @@ import App from './components/App/App';
 import './index.css';
 import ErrorPage from './pages/ErrorPage';
 import HomePage from './pages/HomePage';
-import store from './redux/store';
+import store from './store';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

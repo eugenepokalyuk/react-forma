@@ -4,11 +4,11 @@ import HeroProfile from '../../assets/icons/user.svg';
 
 const UserInfo = () => {
     return (
-        <div className="p-4 text-white rounded-lg">
+        <div className="px-4 pt-4 text-white rounded-lg">
             <div className="flex items-center justify-between space-x-2 mb-12">
                 <div className="flex items-center">
                     <div className="relative text-xl font-bold size-[32px]">
-                        <img className='size-full' src={HeroExperian} alt="" />
+                        <img className='size-full' src={HeroExperian} alt="опыт" />
                         <h3 className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center size-full text-[#000000] text-sm -tracking-widest'>3</h3>
                     </div>
                 </div>
@@ -19,15 +19,15 @@ const UserInfo = () => {
 
                 <div className="flex items-center space-x-2">
                     <button className="text-white bg-[#FFFFFF] bg-opacity-[0.08] size-[32px] rounded-full">
-                        <img className='size-full' src={HeroStar} alt="" />
+                        <img className='size-full' src={HeroStar} alt="звездочка" />
                     </button>
                     <button className="text-white bg-[#FFFFFF] bg-opacity-[0.08] size-[32px] rounded-full">
-                        <img className='size-full' src={HeroProfile} alt="" />
+                        <img className='size-full' src={HeroProfile} alt="человечек" />
                     </button>
                 </div>
             </div>
 
-            <div className='flex flex-col justify-center items-center w-full'>
+            <div className='flex flex-col justify-center items-center w-full mb-[38px]'>
                 <div className="flex justify-center items-center mb-4">
                     <button className="uppercase font-normal rounded-full border border-[#FFFFFF]/[.2] text-[#FFFFFF] tracking-widest h-6 text-xs px-3">
                         ЦЕЛЬ — ПОХУДЕТЬ ДО 96 КГ
