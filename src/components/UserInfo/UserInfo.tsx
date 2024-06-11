@@ -1,16 +1,24 @@
-import HeroExperian from '../../assets/icons/hero-experian.svg';
-import HeroStar from '../../assets/icons/star.svg';
-import HeroProfile from '../../assets/icons/user.svg';
+import { useState } from 'react';
+import IconExperian from '../../assets/icons/hero-experian.svg';
+import IconStarV2 from '../../assets/icons/star_v2.svg';
+import IconProfile from '../../assets/icons/user.svg';
+import Button from '../Button/Button';
+import Modal from '../Modal/Modal';
 
 const UserInfo = () => {
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
+
     return (
         <div className="px-4 pt-4 text-white rounded-lg">
             <div className="flex items-center justify-between space-x-2 mb-12">
                 <div className="flex items-center">
-                    <div className="relative text-xl font-bold size-[32px]">
-                        <img className='size-full' src={HeroExperian} alt="опыт" />
+                    <button className="relative text-xl font-bold size-[32px] select-none" onClick={openModal}>
+                        <img className='size-full' src={IconExperian} alt="опыт" />
                         <h3 className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center size-full text-[#000000] text-sm -tracking-widest'>3</h3>
-                    </div>
+                    </button>
                 </div>
 
                 <div className="flex items-center justify-start flex-1 bg-[#FFFFFF]/[.08] p-1 rounded-full">
@@ -18,18 +26,18 @@ const UserInfo = () => {
                 </div>
 
                 <div className="flex items-center space-x-2">
-                    <button className="text-white bg-[#FFFFFF] bg-opacity-[0.08] size-[32px] rounded-full">
-                        <img className='size-full' src={HeroStar} alt="звездочка" />
+                    <button className="text-white bg-[#FFFFFF] bg-opacity-[0.08] size-[32px] rounded-full" onClick={openModal}>
+                        <img className='size-full p-1.5' src={IconStarV2} alt="звездочка" />
                     </button>
-                    <button className="text-white bg-[#FFFFFF] bg-opacity-[0.08] size-[32px] rounded-full">
-                        <img className='size-full' src={HeroProfile} alt="человечек" />
+                    <button className="text-white bg-[#FFFFFF] bg-opacity-[0.08] size-[32px] rounded-full" onClick={openModal}>
+                        <img className='size-full' src={IconProfile} alt="человечек" />
                     </button>
                 </div>
             </div>
 
             <div className='flex flex-col justify-center items-center w-full mb-[38px]'>
-                <div className="flex justify-center items-center mb-4">
-                    <button className="uppercase font-normal rounded-full border border-[#FFFFFF]/[.2] text-[#FFFFFF] tracking-widest h-6 text-xs px-3">
+                <div className="flex justify-center items-center mb-4 whitespace-nowrap">
+                    <button className="uppercase rounded-full border border-[#FFFFFF]/[.2] text-[#FFFFFF] tracking-widest text-[10px] leading-[10px] font-medium px-2.5 py-1.5">
                         ЦЕЛЬ — ПОХУДЕТЬ ДО 96 КГ
                     </button>
                 </div>
@@ -39,6 +47,32 @@ const UserInfo = () => {
                     <p className="text-sm leading-[18px] font-normal text-[#FFFFFF]/[.56]">План обновляется каждый день исходя из вашей активности</p>
                 </div>
             </div>
+
+            <Modal isOpen={isModalOpen} onClose={closeModal}>
+                <h2 className="text-base font-medium leading-[18px] text-[#FFFFFF] mb-4">Модалка шапки</h2>
+                <form className="space-y-4">
+                    <div>
+                        <label className="block text-xs font-normal leading-[14px] text-[#FFFFFF]/[.32] mb-1" htmlFor="title">Название</label>
+                        <input type="text" id="title" name="title" className="w-full p-2 rounded-lg bg-[#2C2C2E] text-white" />
+                    </div>
+                    <div>
+                        <label className="block text-xs font-normal leading-[14px] text-[#FFFFFF]/[.32] mb-1" htmlFor="unit">Единица измерения</label>
+                        <select id="unit" name="unit" className="w-full p-2 rounded-lg bg-[#2C2C2E] text-white">
+                            <option value="ккал">ккал</option>
+                            <option value="мл">мл</option>
+                            <option value="шаги">шаги</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label className="block text-xs font-normal leading-[14px] text-[#FFFFFF]/[.32] mb-1" htmlFor="score">Количество</label>
+                        <input type="number" id="score" name="score" className="w-full p-2 rounded-lg bg-[#2C2C2E] text-white" />
+                    </div>
+                    <div className="flex justify-end gap-x-2">
+                        <Button variant="orange" onClick={closeModal}>Закрыть</Button>
+                        <Button variant="green" type="submit">Добавить</Button>
+                    </div>
+                </form>
+            </Modal>
         </div>
     );
 };

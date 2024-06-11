@@ -1,6 +1,7 @@
 import IconMoon from '../../assets/icons/moon.svg';
 import ImageChart from '../../assets/images/chart.svg';
 import ImageFood from '../../assets/images/food.png';
+import Button from '../Button/Button';
 
 const Recommendations = () => {
     return (
@@ -13,7 +14,7 @@ const Recommendations = () => {
                 <div className="grid grid-cols-2 gap-1">
                     <div className="bg-[#FFFFFF]/[0.04] text-white row-span-2 p-3 rounded-xl space-y-4 flex flex-col justify-between">
                         <div>
-                            <div>
+                            <div className='mb-4'>
                                 <img src={IconMoon} alt="луна" />
                             </div>
 
@@ -23,7 +24,7 @@ const Recommendations = () => {
                             </div>
                         </div>
 
-                        <button className="bg-[#FFFFFF]/[.08] text-[#FFFFFF] py-[9px] rounded-lg w-full text-xs font-normal leading-[14px]">Наладить сон</button>
+                        <Button variant="gray">Наладить сон</Button>
                     </div>
 
                     <div className="bg-[#FFFFFF]/[0.04] text-white rounded-xl">
@@ -36,9 +37,9 @@ const Recommendations = () => {
                         </div>
                     </div>
 
-                    <button className="bg-gradient-to-b from-[#E48027] to-[#E53E2E] rounded-full aspect-square text-white w-full text-sm font-normal leading-4 text-center p-3">
-                        <span className='text-[50px] font-extralight leading-10 mb-2.5'>10</span>
-                        <br />упражнений для офиса
+                    <button className="bg-gradient-to-b from-[#E48027] to-[#E53E2E] rounded-full aspect-square text-white w-full text-sm font-normal leading-4 text-center p-3  hover:brightness-105 active:brightness-95">
+                        <p className='text-[50px] font-extralight leading-10 mb-1.5'>10</p>
+                        <p>упражнений <span className='whitespace-nowrap'>для офиса</span></p>
                     </button>
                 </div>
 
@@ -51,8 +52,7 @@ const Recommendations = () => {
                         <h2 className='text-[#FFFFFF] text-base leading-[18px] font-medium'>Рецепты для похудения на основе ваших предпочтений</h2>
                         <p className='text-[#FFFFFF]/[.32] text-xs font-normal leading-[14px]'>Рецепты курируются диетологами</p>
                     </div>
-
-                    <button className="bg-[#BBFF00] text-[#444444] py-[9px] px-[21px] rounded-lg w-auto text-xs font-normal leading-[14px]">Смотреть</button>
+                    <Button variant="green">Смотреть</Button>
                 </div>
             </div>
         </div>

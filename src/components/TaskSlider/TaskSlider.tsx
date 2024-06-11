@@ -1,6 +1,7 @@
 import 'swiper/css';
 import 'swiper/css/bundle';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import './TaskSlider.css';
 
 export interface SliderTag {
     text: string;
@@ -23,17 +24,6 @@ const TaskSlider = () => {
     const sliderItems: SliderItem[] = [
         {
             id: 1,
-            title: 'Ночной сон',
-            time: '22:30 – 07:30',
-            option: '9 часов',
-            experience: 300,
-            completed: true,
-            emoji: '🌙',
-            highlight: false,
-            tags: [{ text: '+300 XP' }]
-        },
-        {
-            id: 2,
             title: 'Утренняя медитация',
             time: '07:40 – 08:00',
             option: '20 минут',
@@ -44,7 +34,7 @@ const TaskSlider = () => {
             tags: [{ text: '+200 XP' }]
         },
         {
-            id: 3,
+            id: 2,
             title: 'Зарядка',
             time: '08:10 – 08:25',
             option: '15 минут',
@@ -55,7 +45,7 @@ const TaskSlider = () => {
             tags: [{ text: '15 минут' }, { text: '+250 XP' }]
         },
         {
-            id: 4,
+            id: 3,
             title: 'Завтрак',
             time: '08:30 – 09:00',
             option: 'Белок',
@@ -66,7 +56,7 @@ const TaskSlider = () => {
             tags: [{ text: '+125 XP' }, { text: '+250 ккал' }]
         },
         {
-            id: 5,
+            id: 4,
             title: 'Работа/Учеба',
             time: '09:30 – 13:00',
             option: 'Внимание',
@@ -77,7 +67,7 @@ const TaskSlider = () => {
             tags: [{ text: '+400 XP' }]
         },
         {
-            id: 6,
+            id: 5,
             title: 'Обед',
             time: '13:30 – 14:00',
             option: 'Питание',
@@ -88,7 +78,7 @@ const TaskSlider = () => {
             tags: [{ text: '+150 XP' }, { text: '+400 ккал' }]
         },
         {
-            id: 7,
+            id: 6,
             title: 'Прогулка',
             time: '16:00 – 16:45',
             option: '4000 шагов',
@@ -99,7 +89,7 @@ const TaskSlider = () => {
             tags: [{ text: '4000 шагов' }, { text: '+50 XP' }]
         },
         {
-            id: 8,
+            id: 7,
             title: 'Ужин',
             time: '19:00 – 19:30',
             option: 'Ужин',
@@ -110,7 +100,7 @@ const TaskSlider = () => {
             tags: [{ text: '+100 XP' }, { text: '+300 ккал' }]
         },
         {
-            id: 9,
+            id: 8,
             title: 'Групповая йога онлайн',
             time: '21:00 – 22:00',
             option: 'Бесплатно',
@@ -118,44 +108,55 @@ const TaskSlider = () => {
             completed: false,
             emoji: '🧘‍♀️',
             highlight: true,
-            tags: [{ text: '+500 XP' }, { text: 'Бесплатно', color: 'bg-[#199900]' }]
-        }
+            tags: [{ text: 'Бесплатно', color: 'bg-[#199900]' }, { text: '+500 XP' }]
+        },
+        {
+            id: 9,
+            title: 'Ночной сон',
+            time: '22:30 – 07:30',
+            option: '9 часов',
+            experience: 300,
+            completed: true,
+            emoji: '🌙',
+            highlight: false,
+            tags: [{ text: '+300 XP' }]
+        },
     ];
 
-    const parseTime = (timeString: string) => {
-        const [start, end] = timeString.split(' – ');
-        const [startHours, startMinutes] = start.split(':').map(Number);
-        const [endHours, endMinutes] = end.split(':').map(Number);
+    // const parseTime = (timeString: string) => {
+    //     const [start, end] = timeString.split(' – ');
+    //     const [startHours, startMinutes] = start.split(':').map(Number);
+    //     const [endHours, endMinutes] = end.split(':').map(Number);
 
-        const now = new Date();
-        const startDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), startHours, startMinutes);
-        const endDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), endHours, endMinutes);
+    //     const now = new Date();
+    //     const startDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), startHours, startMinutes);
+    //     const endDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), endHours, endMinutes);
 
-        return { startDate, endDate };
-    };
+    //     return { startDate, endDate };
+    // };
 
-    const getClosestItems = (items: SliderItem[]) => {
-        const now = new Date();
-        return items.sort((a, b) => {
-            const { startDate: startA } = parseTime(a.time);
-            const { startDate: startB } = parseTime(b.time);
-            return Math.abs(now.getTime() - startA.getTime()) - Math.abs(now.getTime() - startB.getTime());
-        });
-    };
+    // const getClosestItems = (items: SliderItem[]) => {
+    //     const now = new Date();
+    //     return items.sort((a, b) => {
+    //         const { startDate: startA } = parseTime(a.time);
+    //         const { startDate: startB } = parseTime(b.time);
+    //         return Math.abs(now.getTime() - startA.getTime()) - Math.abs(now.getTime() - startB.getTime());
+    //     });
+    // };
 
-    const sortedItems = getClosestItems(sliderItems);
+    // const sortedItems = getClosestItems(sliderItems);
 
     return (
         <div>
             <Swiper
-                className='!overflow-visible'
+                className='!overflow-visible custom-swiper'
                 spaceBetween={4}
                 slidesPerView={1.8}
                 centeredSlides
             >
-                {sortedItems.map((item) => (
+                {sliderItems.map((item) => (
                     <SwiperSlide key={item.id}>
-                        <div className="grid grid-cols-1 grid-rows-2 h-48 bg-[#111111]/[.16] p-3 rounded-xl text-white">
+                        <div className="grid grid-cols-1 grid-rows-2 h-48 bg-[#111111]/[.16] p-3 rounded-xl text-white no-select">
                             <div className='flex justify-center items-end size-full pb-4'>
                                 <span role="img" aria-label={item.title} className="text-8xl">{item.emoji}</span>
                             </div>

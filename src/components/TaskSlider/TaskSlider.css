@@ -1,0 +1,11 @@
+.custom-swiper {
+    cursor: grab;
+}
+
+.custom-swiper:active {
+    cursor: grabbing;
+}
+
+.no-select {
+    user-select: none;
+}
