@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 html {
-    background: #282A22;
+    background-color: #EDFBEB;
 }
+
+html.dark {
+    background-color: #282A22;
+}
+
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;

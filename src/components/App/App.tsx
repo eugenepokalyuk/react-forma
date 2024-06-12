@@ -3,8 +3,8 @@ import NavigationMenu from '../NavigationMenu/NavigationMenu';
 
 const App = () => {
   return (
-    <div className='bg-[#282A22] pb-24 flex justify-center'>
-      <div className='w-full xl:max-w-xs'>
+    <div className='dark:bg-[#282A22] bg-[#EDFBEB] pb-24 flex justify-center'>
+      <div className='w-full md:max-w-xs'>
         <Outlet />
         <NavigationMenu />
       </div>

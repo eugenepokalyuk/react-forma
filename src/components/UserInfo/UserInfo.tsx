@@ -1,9 +1,12 @@
 import { useState } from 'react';
-import IconExperian from '../../assets/icons/hero-experian.svg';
-import IconStarV2 from '../../assets/icons/star_v2.svg';
-import IconProfile from '../../assets/icons/user.svg';
-import Button from '../Button/Button';
+import { NavLink } from 'react-router-dom';
+
+import { ReactComponent as IconExperian } from '../../assets/icons/hero-experian.svg';
+import { ReactComponent as IconStarV2 } from '../../assets/icons/star_v2.svg';
+import { ReactComponent as IconProfile } from '../../assets/icons/user.svg';
+
 import Modal from '../Modal/Modal';
+import Button from '../UI/Button/Button';
 
 const UserInfo = () => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -16,7 +19,7 @@ const UserInfo = () => {
             <div className="flex items-center justify-between space-x-2 mb-12">
                 <div className="flex items-center">
                     <button className="relative text-xl font-bold size-[32px] select-none" onClick={openModal}>
-                        <img className='size-full' src={IconExperian} alt="опыт" />
+                        <IconExperian className='size-full' />
                         <h3 className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center size-full text-[#000000] text-sm -tracking-widest'>3</h3>
                     </button>
                 </div>
@@ -27,11 +30,16 @@ const UserInfo = () => {
 
                 <div className="flex items-center space-x-2">
                     <button className="text-white bg-[#FFFFFF] bg-opacity-[0.08] size-[32px] rounded-full" onClick={openModal}>
-                        <img className='size-full p-1.5' src={IconStarV2} alt="звездочка" />
+                        {/* <img className='size-full p-1.5' src={IconStarV2} alt="звездочка" /> */}
+                        <IconStarV2 className='size-full p-1.5' />
                     </button>
-                    <button className="text-white bg-[#FFFFFF] bg-opacity-[0.08] size-[32px] rounded-full" onClick={openModal}>
-                        <img className='size-full' src={IconProfile} alt="человечек" />
-                    </button>
+
+                    <NavLink
+                        to="/profile"
+                        className="text-white bg-[#FFFFFF] bg-opacity-[0.08] size-[32px] rounded-full"
+                    >
+                        <IconProfile className='size-full' />
+                    </NavLink>
                 </div>
             </div>
 

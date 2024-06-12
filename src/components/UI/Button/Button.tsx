@@ -12,7 +12,7 @@ const Button: React.FC<ButtonProps> = ({ variant, onClick, type = 'button', chil
     const variants = {
         orange: 'bg-gradient-to-b from-[#E48027] to-[#E53E2E] text-[#FFFFFF]',
         green: 'bg-[#BBFF00] text-[#444444]',
-        gray: 'bg-[#FFFFFF]/[.08] text-[#FFFFFF]',
+        gray: 'dark:bg-[#FFFFFF]/[.08] bg-[#000000]/[.06] dark:text-[#FFFFFF] text-[#444444]',
     };
 
     const classes = `${baseClasses} ${variants[variant]}`;

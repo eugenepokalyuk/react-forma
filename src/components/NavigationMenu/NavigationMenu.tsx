@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import ImageCircle from '../../assets/icons/lens.svg';
+import { ReactComponent as ImageCircle } from '../../assets/icons/lens.svg';
 
 const NavigationMenu = () => {
     return (
@@ -7,11 +7,11 @@ const NavigationMenu = () => {
             <NavLink
                 to="/programs"
                 className={({ isActive }) =>
-                    isActive ? "flex flex-col justify-center items-center space-y-1.5 text-white" : "flex flex-col justify-center items-center space-y-1.5"
+                    isActive ? "flex flex-col justify-center items-center space-y-1.5 dark:text-white text-[#444444]" : "flex flex-col justify-center items-center space-y-1.5 text-[#444444]/[.56]"
                 }
             >
                 <div>
-                    <img src={ImageCircle} className='w-8 h-8' alt="кружочек" />
+                    <ImageCircle className='dark:fill-[#FFFFFF]/[.08] fill-[#CEE7CB] w-8 h-8' />
                 </div>
                 <span className='text-xs font-normal leading-[14px]'>Программы</span>
             </NavLink>
@@ -19,11 +19,11 @@ const NavigationMenu = () => {
             <NavLink
                 to="/"
                 className={({ isActive }) =>
-                    isActive ? "flex flex-col justify-center items-center space-y-1.5 text-white" : "flex flex-col justify-center items-center space-y-1.5"
+                    isActive ? "flex flex-col justify-center items-center space-y-1.5 dark:text-white text-[#444444]" : "flex flex-col justify-center items-center space-y-1.5 text-[#444444]/[.56]"
                 }
             >
                 <div>
-                    <img src={ImageCircle} className='w-8 h-8' alt="кружочек" />
+                    <ImageCircle className='dark:fill-[#FFFFFF]/[.08] fill-[#CEE7CB] w-8 h-8' />
                 </div>
                 <span className='text-xs font-normal leading-[14px]'>Сегодня</span>
             </NavLink>
@@ -31,11 +31,11 @@ const NavigationMenu = () => {
             <NavLink
                 to="/helper"
                 className={({ isActive }) =>
-                    isActive ? "flex flex-col justify-center items-center space-y-1.5 text-white" : "flex flex-col justify-center items-center space-y-1.5"
+                    isActive ? "flex flex-col justify-center items-center space-y-1.5 dark:text-white text-[#444444]" : "flex flex-col justify-center items-center space-y-1.5 text-[#444444]/[.56]"
                 }
             >
                 <div>
-                    <img src={ImageCircle} className='w-8 h-8' alt="кружочек" />
+                    <ImageCircle className='dark:fill-[#FFFFFF]/[.08] fill-[#CEE7CB] w-8 h-8' />
                 </div>
                 <span className='text-xs font-normal leading-[14px]'>Помощник</span>
             </NavLink>

@@ -9,8 +9,11 @@ interface IconBoltProps {
 const IconBolt: React.FC<IconBoltProps> = ({ percentage, color }) => {
     const height = 48;
     const width = 48;
-    const fillHeight = (percentage / 100) * height;
-    console.log({ fillHeight });
+
+    // const fillHeight = (percentage / 100) * height;
+    if (percentage) {
+        console.log(percentage)
+    }
 
     return (
         <svg

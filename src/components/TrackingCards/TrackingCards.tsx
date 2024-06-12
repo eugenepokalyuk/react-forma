@@ -1,19 +1,26 @@
 import { useState } from 'react';
-import IconAdd from '../../assets/icons/add.svg';
-import IconBasketball from '../../assets/icons/basketball.svg';
-import IconMidnight from '../../assets/icons/midnight.svg';
-// import IconBolt from '../../assets/icons/bolt.svg';
-// import IconRing from '../../assets/icons/ring.svg';
-import Button from '../Button/Button';
+import { ReactComponent as IconAdd } from '../../assets/icons/add.svg';
+import { ReactComponent as IconBasketballLight } from '../../assets/icons/basketball-light.svg';
+import { ReactComponent as IconBasketball } from '../../assets/icons/basketball.svg';
+import { ReactComponent as IconMidnightLight } from '../../assets/icons/midnight-light.svg';
+import { ReactComponent as IconMidnight } from '../../assets/icons/midnight.svg';
+
+import { useTheme } from '../../context/ThemeContext';
+import { DARK_THEME } from '../../utils/consts';
 import IconBolt from '../IconBolt/IconBolt';
 import IconRing from '../IconRing/IconRing';
 import Modal from '../Modal/Modal';
+import Button from '../UI/Button/Button';
 
 const TrackingCards = () => {
+  const { theme } = useTheme();
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+
+  const basketballIcon = theme === DARK_THEME ? <IconBasketball /> : <IconBasketballLight />;
+  const midnightIcon = theme === DARK_THEME ? <IconMidnight /> : <IconMidnightLight />;
 
   const activityCards = [
     {
@@ -39,43 +46,43 @@ const TrackingCards = () => {
       <div className="grid grid-cols-3 gap-x-1 mb-2">
         {activityCards.map((item, index) => {
           return (
-            <button className="grid grid-cols-1 bg-[#FFFFFF]/[0.04] p-1.5 rounded-lg text-white text-center  hover:brightness-105 active:brightness-95" key={index}>
+            // 
+            <div className="grid grid-cols-1 dark:bg-[#FFFFFF]/[0.04] bg-[#FFFFFF] p-1.5 rounded-lg dark:text-[#FFFFFF] text-[#444444] text-center" key={index}>
               <div className='mb-8'>
-                {/* <img src={item.imageUrl} alt={item.title} /> */}
                 {item.icon}
               </div>
 
               <div className='flex flex-col justify-start text-left mb-2'>
-                <p className='text-xs font-normal leading-[14px] text-[#FFFFFF]'>{item.title}</p>
-                <p className='text-xs font-normal leading-[14px] text-[#FFFFFF]/[.32]'>{item.unit}</p>
+                <p className='text-xs font-normal leading-[14px] dark:text-[#FFFFFF] text-[#444444]'>{item.title}</p>
+                <p className='text-xs font-normal leading-[14px] dark:text-[#FFFFFF]/[.32] text-[#444444]/[.56]'>{item.unit}</p>
               </div>
 
               <div className='flex justify-between items-center'>
                 <p className="text-base leading-4 text-left">{item.score}</p>
-                <button onClick={openModal} className="flex justify-center items-center size-6 bg-[#384D00] rounded-lg text-[#BBFF00]">
-                  <img src={IconAdd} alt="плюсик" className='size-4' />
+                <button onClick={openModal} className="flex justify-center items-center size-6 dark:bg-[#384D00] bg-[#BBFF00] rounded-lg text-[#BBFF00] hover:brightness-105 active:brightness-95">
+                  <IconAdd className='size-4 fill-[#599900]' />
                 </button>
               </div>
-            </button>
+            </div>
           )
         })}
       </div>
 
       <div className="grid grid-cols-2 grid-rows-1 gap-x-2">
 
-        <button className="card bg-[#FFFFFF]/[0.04] p-4 rounded-lg text-white text-center  hover:brightness-105 active:brightness-95">
+        <button className="card dark:bg-[#FFFFFF]/[0.04] bg-[#FFFFFF] p-4 rounded-lg dark:text-[#FFFFFF] text-[#444444] text-center hover:brightness-105 active:brightness-95">
           <div className='flex justify-start items-center gap-x-2.5'>
             <div>
-              <img src={IconBasketball} alt="мячик" />
+              {basketballIcon}
             </div>
             <p className='text-xs leading-[14px] font-normal'>Тренировка</p>
           </div>
         </button>
 
-        <button className="card bg-[#FFFFFF]/[0.04] p-4 rounded-lg text-white text-center  hover:brightness-105 active:brightness-95">
+        <button className="card dark:bg-[#FFFFFF]/[0.04] bg-[#FFFFFF] p-4 rounded-lg dark:text-[#FFFFFF] text-[#444444] text-center hover:brightness-105 active:brightness-95">
           <div className='flex justify-start items-center gap-x-2.5'>
             <div>
-              <img src={IconMidnight} alt="луна" />
+              {midnightIcon}
             </div>
             <p className='text-xs leading-[14px] font-normal'>Отдых</p>
           </div>
