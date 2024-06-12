@@ -2,7 +2,6 @@ import Recommendations from '../components/Recommendations/Recommendations';
 import TaskSlider from '../components/TaskSlider/TaskSlider';
 import TrackingCards from '../components/TrackingCards/TrackingCards';
 import UserInfo from '../components/UserInfo/UserInfo';
-import './HomePage.css';
 
 const HomePage = () => {
     return (

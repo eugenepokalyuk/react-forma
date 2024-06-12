@@ -123,33 +123,10 @@ const TaskSlider = () => {
         },
     ];
 
-    // const parseTime = (timeString: string) => {
-    //     const [start, end] = timeString.split(' – ');
-    //     const [startHours, startMinutes] = start.split(':').map(Number);
-    //     const [endHours, endMinutes] = end.split(':').map(Number);
-
-    //     const now = new Date();
-    //     const startDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), startHours, startMinutes);
-    //     const endDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), endHours, endMinutes);
-
-    //     return { startDate, endDate };
-    // };
-
-    // const getClosestItems = (items: SliderItem[]) => {
-    //     const now = new Date();
-    //     return items.sort((a, b) => {
-    //         const { startDate: startA } = parseTime(a.time);
-    //         const { startDate: startB } = parseTime(b.time);
-    //         return Math.abs(now.getTime() - startA.getTime()) - Math.abs(now.getTime() - startB.getTime());
-    //     });
-    // };
-
-    // const sortedItems = getClosestItems(sliderItems);
-
     return (
         <div>
             <Swiper
-                className='!overflow-visible custom-swiper'
+                className='overflow-visible custom-swiper'
                 spaceBetween={4}
                 slidesPerView={1.8}
                 centeredSlides

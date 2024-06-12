@@ -10,7 +10,62 @@ html.dark {
     background-color: #282A22;
 }
 
-
 body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
+/* #region [ HomePage ] */
+.fish {
+    position: absolute;
+    width: 128px;
+    height: 128px;
+    /* background: #a748ab; */
+    background: #FFFFFF;
+    border-radius: 9999px;
+    opacity: 0.5;
+    filter: blur(2rem) brightness(1.2) opacity(0.2);
+  }
+  
+  @keyframes fish {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    25% {
+      transform: translate(50vw, 10vh) scale(1.2);
+    }
+    50% {
+      transform: translate(100vw, 50vh) scale(1);
+    }
+    75% {
+      transform: translate(50vw, 90vh) scale(0.8);
+    }
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+  }
+  
+  .animate-fish {
+    animation: fish 10s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  }
+/* #endregion [ HomePage ] */
+
+/* #region [ ProfilePage ] */
+.fixed {
+  transition: transform 0.3s ease-in-out;
+}
+
+.fixed-enter {
+  transform: translateY(100%);
+}
+
+.fixed-enter-active {
+  transform: translateY(0);
+}
+
+.fixed-exit {
+  transform: translateY(0);
+}
+
+.fixed-exit-active {
+  transform: translateY(100%);
+}
+/* #endregion [ ProfilePage ] */
