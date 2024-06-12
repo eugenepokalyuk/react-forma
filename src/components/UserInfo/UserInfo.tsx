@@ -30,7 +30,6 @@ const UserInfo = () => {
 
                 <div className="flex items-center space-x-2">
                     <button className="text-white bg-[#FFFFFF] bg-opacity-[0.08] size-[32px] rounded-full" onClick={openModal}>
-                        {/* <img className='size-full p-1.5' src={IconStarV2} alt="звездочка" /> */}
                         <IconStarV2 className='size-full p-1.5' />
                     </button>
 

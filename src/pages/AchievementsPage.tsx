@@ -21,7 +21,6 @@ const AchievementsPage: React.FC = () => {
                 </button>
             </div>
             <div className="grid grid-cols-2 gap-4">
-                {/* Пример достижений */}
                 <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
                     <img src="/path/to/image.jpg" alt="Achievement" className="w-full h-32 object-cover rounded-md" />
                     <h3 className="text-lg font-semibold mt-2">Достижение 1</h3>
@@ -30,7 +29,6 @@ const AchievementsPage: React.FC = () => {
                     <img src="/path/to/image.jpg" alt="Achievement" className="w-full h-32 object-cover rounded-md" />
                     <h3 className="text-lg font-semibold mt-2">Достижение 2</h3>
                 </div>
-                {/* Добавьте остальные достижения */}
             </div>
         </div>
     );

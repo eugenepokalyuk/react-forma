@@ -12,7 +12,6 @@ interface ProfileCardProps {
 const ProfileCard: React.FC<ProfileCardProps> = ({ name, tag, description }) => {
     return (
         <div className='bg-[#111111]/[.16] p-3 space-y-2 rounded-xl'>
-            {/* flex flex-row justify-start gap-x-2 items-center  */}
             <div className="grid grid-cols-10 rounded-xl">
                 <div className='col-span-2'>
                     <img src={userPhoto} alt="User" className="w-12 h-12 rounded-full border-2 border-[#BBFF00] object-cover" />
