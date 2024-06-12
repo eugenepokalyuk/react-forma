@@ -7,7 +7,7 @@ const NavigationMenu = () => {
             <NavLink
                 to="/programs"
                 className={({ isActive }) =>
-                    isActive ? "flex flex-col justify-center items-center space-y-1.5 dark:text-white text-[#444444]" : "flex flex-col justify-center items-center space-y-1.5 text-[#444444]/[.56]"
+                    isActive ? "flex flex-col justify-center items-center space-y-1.5 dark:text-white text-[#444444] active:scale-95" : "flex flex-col justify-center items-center space-y-1.5 text-[#444444]/[.56] active:scale-95"
                 }
             >
                 <div>
@@ -19,7 +19,7 @@ const NavigationMenu = () => {
             <NavLink
                 to="/"
                 className={({ isActive }) =>
-                    isActive ? "flex flex-col justify-center items-center space-y-1.5 dark:text-white text-[#444444]" : "flex flex-col justify-center items-center space-y-1.5 text-[#444444]/[.56]"
+                    isActive ? "flex flex-col justify-center items-center space-y-1.5 dark:text-white text-[#444444] active:scale-95" : "flex flex-col justify-center items-center space-y-1.5 text-[#444444]/[.56] active:scale-95"
                 }
             >
                 <div>
@@ -31,7 +31,7 @@ const NavigationMenu = () => {
             <NavLink
                 to="/helper"
                 className={({ isActive }) =>
-                    isActive ? "flex flex-col justify-center items-center space-y-1.5 dark:text-white text-[#444444]" : "flex flex-col justify-center items-center space-y-1.5 text-[#444444]/[.56]"
+                    isActive ? "flex flex-col justify-center items-center space-y-1.5 dark:text-white text-[#444444] active:scale-95" : "flex flex-col justify-center items-center space-y-1.5 text-[#444444]/[.56] active:scale-95"
                 }
             >
                 <div>

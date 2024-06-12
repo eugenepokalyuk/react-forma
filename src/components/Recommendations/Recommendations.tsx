@@ -39,7 +39,7 @@ const Recommendations = () => {
                         </div>
                     </div>
 
-                    <button className="bg-gradient-to-b from-[#E48027] to-[#E53E2E] rounded-full aspect-square text-white w-full text-sm font-normal leading-4 text-center p-3  hover:brightness-105 active:brightness-95">
+                    <button className="bg-gradient-to-b from-[#E48027] to-[#E53E2E] rounded-full aspect-square text-white w-full text-sm font-normal leading-4 text-center p-3 hover:brightness-105 active:brightness-95 active:scale-95">
                         <p className='text-[50px] font-extralight leading-10 mb-1.5'>10</p>
                         <p>упражнений <span className='whitespace-nowrap'>для офиса</span></p>
                     </button>

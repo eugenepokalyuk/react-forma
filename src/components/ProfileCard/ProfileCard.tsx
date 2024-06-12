@@ -19,7 +19,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ name, tag, description }) => 
                 <div className='w-full col-span-8'>
                     <div className='flex flex-row justify-between items-center'>
                         <h3 className='text-lg leading-6 font-medium dark:text-[#FFFFFF] text-[#444444] flex items-center gap-x-2'>{name}</h3>
-                        <Tag className='!bg-[#BBFF00] text-[8px] font-semibold'>{tag}</Tag>
+                        <Tag variant={'green'} font={'small'} className='font-semibold'>{tag}</Tag>
                     </div>
                     <p className='text-sm leading-[18px] font-normal dark:text-[#FFFFFF]/[.56] text-[#444444]'>{description}</p>
                 </div>

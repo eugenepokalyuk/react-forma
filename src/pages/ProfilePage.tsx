@@ -12,6 +12,7 @@ import Button from '../components/UI/Button/Button';
 import Sheet from '../components/UI/Sheet/Sheet';
 import Tag from '../components/UI/Tag/Tag';
 import ThemeToggle from '../components/UI/ThemeToggle/ThemeToggle';
+import { ACHIEVEMENTS_PATH } from '../utils/consts';
 
 interface Achievement {
     id: number;
@@ -20,6 +21,7 @@ interface Achievement {
     image: string;
 }
 
+// toDo: Объеденить логику ачивок в одном месте, закончить страницу ачивок
 const achievements: Achievement[] = [
     { id: 1, title: 'Начинающий исследователь', description: 'Пройдите ваш первый уровень.', image: 'https://achievements.htmlacademy.ru/assets/achievements/icon/6492dfc2dc72c7cec75f648c.svg' },
     { id: 2, title: 'Покоритель вершин', description: 'Завершите 5 уровней.', image: 'https://achievements.htmlacademy.ru/assets/achievements/icon/6492dfc2dc72c7cec75f645f.svg' },
@@ -57,7 +59,10 @@ const ProfilePage: React.FC = () => {
                 <article className="relative z-20 px-4 mt-4">
                     <div className="flex flex-row justify-between p-3 items-start bg-[#111111]/[.16] rounded-xl">
                         <div>
-                            <h3 className='text-lg leading-6 font-medium text-[#FFFFFF] uppercase flex items-center gap-x-2'>Tinkoff <Tag>premium</Tag></h3>
+                            <div className='flex flex-row items-center gap-x-1'>
+                                <h3 className='text-lg leading-6 font-medium text-[#FFFFFF] uppercase flex items-center gap-x-2'>Tinkoff</h3>
+                                <Tag variant='green' font='small'>premium</Tag>
+                            </div>
                             <p className='text-sm leading-[18px] font-normal text-[#FFFFFF]/[.56]'>Premium services</p>
                         </div>
                         <div>
@@ -83,7 +88,7 @@ const ProfilePage: React.FC = () => {
                         {achievements.map((achievement) => (
                             <SwiperSlide key={achievement.id}>
                                 <div
-                                    className="p-1.5 dark:bg-[#FFFFFF]/[.04] bg-[#FFFFFF] rounded-xl w-full flex justify-center items-center no-select"
+                                    className="p-1.5 dark:bg-[#FFFFFF]/[.04] bg-[#FFFFFF] rounded-xl w-full flex justify-center items-center no-select active:scale-95"
                                     onClick={() => setSelectedAchievement(achievement)}
                                 >
                                     <img src={achievement.image} alt={achievement.title} className="w-16 h-16" />
@@ -91,6 +96,7 @@ const ProfilePage: React.FC = () => {
                             </SwiperSlide>
                         ))}
                     </Swiper>
+                    <Button variant='green' className='w-full' to={ACHIEVEMENTS_PATH}>Посмотреть все достижения</Button>
                 </article>
 
                 <article className='space-y-1'>
@@ -101,15 +107,23 @@ const ProfilePage: React.FC = () => {
                 </article>
 
                 <article className='space-y-1'>
+                    <h3 className='text-lg leading-6 font-medium dark:text-[#FFFFFF] text-[#444444]'>Forma products</h3>
                     <Button variant={'gray'} className='w-full'>Forma Premium</Button>
                     <Button variant={'gray'} className='w-full'>Forma Buisness</Button>
                     <Button variant={'gray'} className='w-full'>Gift Forma Premium</Button>
                 </article>
 
                 <article className='space-y-1'>
+                    <h3 className='text-lg leading-6 font-medium dark:text-[#FFFFFF] text-[#444444]'>About Forma</h3>
                     <Button variant={'gray'} className='w-full'>Ask a Question</Button>
                     <Button variant={'gray'} className='w-full'>Forma FAQ</Button>
                     <Button variant={'gray'} className='w-full'>Forma Features</Button>
+                </article>
+
+                <article className='space-y-1'>
+                    <h3 className='text-lg leading-6 font-medium dark:text-[#FFFFFF] text-[#444444]'>Work with Forma</h3>
+                    <Button variant={'gray'} className='w-full'>Forma Team</Button>
+                    <Button variant={'gray'} className='w-full'>Forma Vacancies</Button>
                 </article>
 
                 <article className='space-y-1'>
@@ -121,7 +135,6 @@ const ProfilePage: React.FC = () => {
                         <IconTwitter className='size-8' />
                     </div>
                 </article>
-
 
                 <article className='space-y-1'>
                     <Button variant={'green'} className='w-full'>Выйти из аккаунта</Button>
