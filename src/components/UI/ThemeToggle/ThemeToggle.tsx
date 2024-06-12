@@ -11,13 +11,11 @@ const ThemeToggle: React.FC = () => {
     return (
         <button
             onClick={toggleTheme}
-            className="p-2 rounded dark:bg-gray-800 text-gray-800 dark:text-gray-200"
+            className="flex justify-center items-center rounded-full dark:bg-gray-800 bg-gray-800 text-gray-800 dark:text-gray-200 size-8"
         >
-            {/* <img src= alt="" /> */}
-            {
-                theme === DARK_THEME
-                    ? <IconSun />
-                    : <IconMoon />
+            {theme === DARK_THEME
+                ? <IconSun />
+                : <IconMoon />
             }
 
         </button>
