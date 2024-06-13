@@ -1,15 +1,26 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '../UI/Button/Button';
 import Tag from '../UI/Tag/Tag';
 
 interface ProgramCardProps {
+    id: number;
     title: string;
     description: string;
     isLocked: boolean;
     isFree: boolean;
 }
 
-const ProgramCard: React.FC<ProgramCardProps> = ({ title, description, isLocked, isFree }) => {
+const ProgramCard: React.FC<ProgramCardProps> = ({ id, title, description, isLocked, isFree }) => {
+    const navigate = useNavigate();
+
+    const handleStart = () => {
+        if (!isLocked) {
+            navigate(`/programs/${id}`, { state: { isLocked } });
+            // navigate(`/programs/${title.replace(/\s+/g, '-').toLowerCase()}`, { state: { isLocked } });
+        }
+    };
+
     return (
         <div className={`bg-[#111111]/[.16] p-3 space-y-2 rounded-xl ${isLocked ? 'opacity-50 cursor-not-allowed' : ''}`}>
             <div className="flex flex-row justify-between items-start">
@@ -19,7 +30,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ title, description, isLocked,
             </div>
             <p className='text-sm leading-[18px] font-normal dark:text-[#FFFFFF]/[.56] text-[#444444]'>{description}</p>
             <div>
-                <Button variant='gray' className='w-full' disabled={isLocked}>Начать</Button>
+                <Button variant='gray' className='w-full' disabled={isLocked} onClick={handleStart}>Начать</Button>
             </div>
         </div>
     );

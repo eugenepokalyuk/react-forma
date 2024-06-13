@@ -75,7 +75,7 @@ const UserInfo = () => {
                         <input type="number" id="score" name="score" className="w-full p-2 rounded-lg bg-[#2C2C2E] text-white" />
                     </div>
                     <div className="flex justify-end gap-x-2">
-                        <Button variant="orange" onClick={closeModal}>Закрыть</Button>
+                        <Button variant="gray" onClick={closeModal}>Закрыть</Button>
                         <Button variant="green" type="submit">Добавить</Button>
                     </div>
                 </form>
