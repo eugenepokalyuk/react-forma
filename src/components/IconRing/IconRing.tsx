@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { useTheme } from '../../context/ThemeContext';
 import { DARK_THEME } from '../../utils/consts';
 
@@ -9,8 +10,11 @@ interface IconRingProps {
 
 const IconRing: React.FC<IconRingProps> = ({ percentage, color }) => {
     const { theme } = useTheme();
+
     const radius = 18;
+    
     const circumference = 2 * Math.PI * radius;
+    
     const offset = circumference - (percentage / 100) * circumference;
 
     const defaultColor = theme === DARK_THEME ? '#FFFFFF29' : '#EDEDED';
@@ -27,6 +31,7 @@ const IconRing: React.FC<IconRingProps> = ({ percentage, color }) => {
                 strokeDasharray={circumference}
                 strokeDashoffset={0}
             />
+            
             <circle
                 cx="24"
                 cy="24"
