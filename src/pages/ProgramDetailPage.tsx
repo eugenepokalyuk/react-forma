@@ -3,13 +3,16 @@ import { Navigate, useLocation, useParams } from 'react-router-dom';
 
 const ProgramDetailPage: React.FC = () => {
     const { programId } = useParams<{ programId: string }>();
+    
     const location = useLocation();
+    
     const isLocked = location.state?.isLocked;
 
     if (isLocked || !programId) {
         return <Navigate to="/" replace />;
     }
-
+    
+    // toDo: Вынести в моки
     // toDo: заменить на запрос данных
     const programData = {
         title: 'Программа № 1',
@@ -61,16 +64,21 @@ const ProgramDetailPage: React.FC = () => {
                 <div className="absolute top-0 left-0 w-full h-full z-10">
                     <div className="fish animate-fish"></div>
                 </div>
+                
                 <div className="relative z-20 mt-8 px-4">
                     <h1 className='text-3xl font-semibold mb-4'>{programData.title}</h1>
+                    
                     <h2 className='text-xl mb-2'>Автор: {programData.author}</h2>
+                
                     <p className='mb-4'>{programData.description}</p>
                 </div>
             </div>
+            
             <div className='px-[15px] pt-6 space-y-4'>
                 {programData.days.map((day, index) => (
                     <div key={index} className='dark:bg-[#FFFFFF]/[0.04] bg-[#FFFFFF] p-1.5 rounded-lg dark:text-[#FFFFFF] text-[#444444]'>
                         <h3 className='text-lg font-semibold'>{day.day}</h3>
+            
                         <ul className='list-disc pl-4'>
                             {day.exercises.map((exercise, idx) => (
                                 <li key={idx}>{exercise}</li>
