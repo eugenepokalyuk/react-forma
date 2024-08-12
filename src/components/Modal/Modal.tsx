@@ -6,7 +6,6 @@ import { ReactComponent as IconClose } from '../../assets/icons/close.svg';
 interface ModalProps {
     isOpen: boolean;
     onClose: () => void;
-    children: React.ReactNode;
 }
 
 const Modal: FC<ModalProps> = ({ isOpen, onClose, children }) => {
