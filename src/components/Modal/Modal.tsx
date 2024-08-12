@@ -1,5 +1,6 @@
-import React from 'react';
+import { FC } from 'react';
 import ReactDOM from 'react-dom';
+
 import { ReactComponent as IconClose } from '../../assets/icons/close.svg';
 
 interface ModalProps {
@@ -8,7 +9,7 @@ interface ModalProps {
     children: React.ReactNode;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
+const Modal: FC<ModalProps> = ({ isOpen, onClose, children }) => {
     if (!isOpen) return null;
 
     return ReactDOM.createPortal(
@@ -17,6 +18,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
                 <button className="flex justify-center items-center absolute -top-10 md:-top-8 right-0 md:-right-8 bg-white bg-opacity-50 hover:bg-opacity-100 size-8 rounded-full" onClick={onClose}>
                     <IconClose />
                 </button>
+                
                 {children}
             </div>
         </div>,
