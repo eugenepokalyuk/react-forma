@@ -1,6 +1,7 @@
 import 'swiper/css';
 import 'swiper/css/bundle';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 import './TaskSlider.css';
 
 export interface SliderTag {
@@ -21,6 +22,7 @@ export interface SliderItem {
 }
 
 const TaskSlider = () => {
+    // toDo: Вынести в моки
     const sliderItems: SliderItem[] = [
         {
             id: 1,
@@ -137,11 +139,14 @@ const TaskSlider = () => {
                             <div className='flex justify-center items-end size-full pb-4'>
                                 <span role="img" aria-label={item.title} className="text-8xl">{item.emoji}</span>
                             </div>
+                            
                             <div className='flex flex-col justify-between items-start size-full'>
                                 <div className='space-y-1'>
                                     <h3 className='text-base font-medium leading-[18px] text-left'>{item.title}</h3>
+                            
                                     <p className="text-xs font-normal leading-[14px] text-left">{item.time}</p>
                                 </div>
+                                
                                 <div className='flex flex-wrap space-x-2'>
                                     {item.tags.map((tag, index) => (
                                         <span key={index} className={`text-xs font-normal leading-3 text-center bg-[#000000]/[.08] rounded p-1 ${tag.color || 'text-white'}`}>
