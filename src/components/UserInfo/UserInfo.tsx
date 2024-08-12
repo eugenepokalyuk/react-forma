@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import Modal from '../Modal/Modal';
+import Button from '../UI/Button/Button';
 import { ReactComponent as IconExperian } from '../../assets/icons/hero-experian.svg';
 import { ReactComponent as IconStarV2 } from '../../assets/icons/star_v2.svg';
 import { ReactComponent as IconProfile } from '../../assets/icons/user.svg';
-
-import Modal from '../Modal/Modal';
-import Button from '../UI/Button/Button';
 
 const UserInfo = () => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
     const openModal = () => setIsModalOpen(true);
+    
     const closeModal = () => setIsModalOpen(false);
 
     return (
@@ -20,6 +20,7 @@ const UserInfo = () => {
                 <div className="flex items-center">
                     <button className="relative text-xl font-bold size-[32px] select-none" onClick={openModal}>
                         <IconExperian className='size-full' />
+    
                         <h3 className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center size-full text-[#000000] text-sm -tracking-widest'>3</h3>
                     </button>
                 </div>
@@ -51,6 +52,7 @@ const UserInfo = () => {
 
                 <div className='flex flex-col justify-center items-center text-center w-[226px] space-y-2'>
                     <h1 className="text-[28px] leading-7 font-normal">План на сегодня выполнен на 40%</h1>
+                    
                     <p className="text-sm leading-[18px] font-normal text-[#FFFFFF]/[.56]">План обновляется каждый день исходя из вашей активности</p>
                 </div>
             </div>
@@ -60,22 +62,31 @@ const UserInfo = () => {
                 <form className="space-y-4">
                     <div>
                         <label className="block text-xs font-normal leading-[14px] text-[#FFFFFF]/[.32] mb-1" htmlFor="title">Название</label>
+                        
                         <input type="text" id="title" name="title" className="w-full p-2 rounded-lg bg-[#2C2C2E] text-white" />
                     </div>
+                    
                     <div>
                         <label className="block text-xs font-normal leading-[14px] text-[#FFFFFF]/[.32] mb-1" htmlFor="unit">Единица измерения</label>
+                        
                         <select id="unit" name="unit" className="w-full p-2 rounded-lg bg-[#2C2C2E] text-white">
                             <option value="ккал">ккал</option>
+                        
                             <option value="мл">мл</option>
+                            
                             <option value="шаги">шаги</option>
                         </select>
                     </div>
+                    
                     <div>
                         <label className="block text-xs font-normal leading-[14px] text-[#FFFFFF]/[.32] mb-1" htmlFor="score">Количество</label>
+                    
                         <input type="number" id="score" name="score" className="w-full p-2 rounded-lg bg-[#2C2C2E] text-white" />
                     </div>
+                    
                     <div className="flex justify-end gap-x-2">
                         <Button variant="gray" onClick={closeModal}>Закрыть</Button>
+                    
                         <Button variant="green" type="submit">Добавить</Button>
                     </div>
                 </form>
