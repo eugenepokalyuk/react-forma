@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+
 import { ReactComponent as ImageCircle } from '../../assets/icons/lens.svg';
 import { DEFAULT_PATH, PROGRAMS_PATH, SUBSCRIPTION_PATH } from '../../utils/consts';
 
@@ -14,6 +15,7 @@ const NavigationMenu = () => {
                 <div>
                     <ImageCircle className='dark:fill-[#FFFFFF]/[.08] fill-[#CEE7CB] w-8 h-8' />
                 </div>
+
                 <span className='text-xs font-normal leading-[14px]'>Программы</span>
             </NavLink>
 
@@ -26,6 +28,7 @@ const NavigationMenu = () => {
                 <div>
                     <ImageCircle className='dark:fill-[#FFFFFF]/[.08] fill-[#CEE7CB] w-8 h-8' />
                 </div>
+                
                 <span className='text-xs font-normal leading-[14px]'>Сегодня</span>
             </NavLink>
 
@@ -38,6 +41,7 @@ const NavigationMenu = () => {
                 <div>
                     <ImageCircle className='dark:fill-[#FFFFFF]/[.08] fill-[#CEE7CB] w-8 h-8' />
                 </div>
+                
                 <span className='text-xs font-normal leading-[14px]'>Помощник</span>
             </NavLink>
         </div>
