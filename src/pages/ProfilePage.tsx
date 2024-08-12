@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import 'swiper/css';
 import 'swiper/css/bundle';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 import { ReactComponent as IconClose } from '../assets/icons/close.svg';
 import { ReactComponent as IconFacebook } from '../assets/icons/company/facebook.svg';
 import { ReactComponent as IconInstagram } from '../assets/icons/company/instagram.svg';
@@ -21,6 +22,7 @@ interface Achievement {
     image: string;
 }
 
+// toDo: Вынести в моки
 // toDo: Объеденить логику ачивок в одном месте, закончить страницу ачивок
 const achievements: Achievement[] = [
     { id: 1, title: 'Начинающий исследователь', description: 'Пройдите ваш первый уровень.', image: 'https://achievements.htmlacademy.ru/assets/achievements/icon/6492dfc2dc72c7cec75f648c.svg' },
@@ -52,6 +54,7 @@ const ProfilePage: React.FC = () => {
                 <article className="relative z-20 mt-8">
                     <div className="flex flex-col items-center">
                         <img src={userPhoto} alt="User" className="w-24 h-24 rounded-full border-4 border-[#BBFF00]" />
+                        
                         <h2 className="text-2xl font-semibold text-white mt-4">Евгений Покалюк</h2>
                     </div>
                 </article>
@@ -61,10 +64,13 @@ const ProfilePage: React.FC = () => {
                         <div>
                             <div className='flex flex-row items-center gap-x-1'>
                                 <h3 className='text-lg leading-6 font-medium text-[#FFFFFF] uppercase flex items-center gap-x-2'>Tinkoff</h3>
+                        
                                 <Tag variant='green' font='small'>premium</Tag>
                             </div>
+                        
                             <p className='text-sm leading-[18px] font-normal text-[#FFFFFF]/[.56]'>Premium services</p>
                         </div>
+                        
                         <div>
                             <Button variant='green'>Learn more</Button>
                         </div>
@@ -75,11 +81,13 @@ const ProfilePage: React.FC = () => {
             <section className="mt-6 space-y-4 px-[15px]">
                 <article className="flex items-center justify-between">
                     <h3 className='text-lg leading-6 font-medium dark:text-[#FFFFFF] text-[#444444]'>Сменить тему</h3>
+                    
                     <ThemeToggle />
                 </article>
 
                 <article className='relative z-20 space-y-2'>
                     <h3 className='text-lg leading-6 font-medium dark:text-[#FFFFFF] text-[#444444]'>Достижения</h3>
+                    
                     <Swiper
                         className='custom-swiper'
                         spaceBetween={4}
@@ -96,42 +104,58 @@ const ProfilePage: React.FC = () => {
                             </SwiperSlide>
                         ))}
                     </Swiper>
+                    
                     <Button variant='green' className='w-full' to={ACHIEVEMENTS_PATH}>Посмотреть все достижения</Button>
                 </article>
 
                 <article className='space-y-1'>
                     <Button variant={'gray'} className='w-full'>Notifications and Sounds</Button>
+                    
                     <Button variant={'gray'} className='w-full'>Privacy and Security</Button>
+                    
                     <Button variant={'gray'} className='w-full'>Data and Storage</Button>
+                    
                     <Button variant={'gray'} className='w-full'>Language</Button>
                 </article>
 
                 <article className='space-y-1'>
                     <h3 className='text-lg leading-6 font-medium dark:text-[#FFFFFF] text-[#444444]'>Forma products</h3>
+                    
                     <Button variant={'gray'} className='w-full'>Forma Premium</Button>
+                    
                     <Button variant={'gray'} className='w-full'>Forma Buisness</Button>
+                    
                     <Button variant={'gray'} className='w-full'>Gift Forma Premium</Button>
                 </article>
 
                 <article className='space-y-1'>
                     <h3 className='text-lg leading-6 font-medium dark:text-[#FFFFFF] text-[#444444]'>About Forma</h3>
+                    
                     <Button variant={'gray'} className='w-full'>Ask a Question</Button>
+                    
                     <Button variant={'gray'} className='w-full'>Forma FAQ</Button>
+                    
                     <Button variant={'gray'} className='w-full'>Forma Features</Button>
                 </article>
 
                 <article className='space-y-1'>
                     <h3 className='text-lg leading-6 font-medium dark:text-[#FFFFFF] text-[#444444]'>Work with Forma</h3>
+                    
                     <Button variant={'gray'} className='w-full'>Forma Team</Button>
+                    
                     <Button variant={'gray'} className='w-full'>Forma Vacancies</Button>
                 </article>
 
                 <article className='space-y-1'>
                     <h3 className='text-lg leading-6 font-medium dark:text-[#FFFFFF] text-[#444444]'>Мы в соц сетях</h3>
+                    
                     <div className='flex flex-row justify-start items-center gap-x-2'>
                         <IconTelegram className='size-8' />
+                    
                         <IconFacebook className='size-8' />
+                        
                         <IconInstagram className='size-8' />
+                        
                         <IconTwitter className='size-8' />
                     </div>
                 </article>
@@ -153,6 +177,7 @@ const ProfilePage: React.FC = () => {
 
                     <div>
                         <img src={selectedAchievement.image} alt={selectedAchievement.title} className="w-full h-64 object-contain rounded-md mb-4" />
+                        
                         <p className="text-gray-600 dark:text-gray-400">{selectedAchievement.description}</p>
                     </div>
                 </Sheet>
