@@ -1,13 +1,15 @@
-import React from 'react';
+import { FC } from 'react';
+
 import ProgramCard from '../components/ProgramCard/ProgramCard';
 
+// toDo: Вынести в моки
 const programs = [
     { id: 0, title: 'Кардио тренировка', description: 'Улучшение сердечно-сосудистой системы', isLocked: false, isFree: true },
     { id: 1, title: 'Силовая тренировка', description: 'Повышение мышечной массы', isLocked: true, isFree: false },
     { id: 2, title: 'Гибкость и растяжка', description: 'Улучшение гибкости и подвижности', isLocked: true, isFree: false },
 ];
 
-const ProgramsPage: React.FC = () => {
+const ProgramsPage: FC = () => {
     return (
         <div>
             <section className="mt-6 space-y-4 px-[15px]">
