@@ -10,13 +10,16 @@ const HomePage = () => {
                 <div className="absolute top-0 left-0 w-full h-full z-10">
                     <div className="fish animate-fish"></div>
                 </div>
+                
                 <div className="relative z-20">
                     <UserInfo />
+                
                     <TaskSlider />
                 </div>
             </div>
 
             <TrackingCards />
+            
             <Recommendations />
         </div>
     );
