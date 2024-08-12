@@ -13,6 +13,7 @@ import UserModelPhoto5 from '../assets/images/model-user-photo-5.png';
 import UserModelPhoto6 from '../assets/images/model-user-photo-6.png';
 import UserModelPhoto7 from '../assets/images/model-user-photo-7.png';
 
+// toDo: Вынести в моки
 const ais = [
     { name: 'AI', tag: 'Standart', description: 'Тренер', image: AIPhoto1 },
     { name: 'AI+', tag: 'Medium', description: 'Тренер + Нутрициолог', image: AIPhoto2 },
