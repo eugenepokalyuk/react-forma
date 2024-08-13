@@ -1,7 +1,7 @@
-import Button from '../UI/Button/Button';
-import ImageFood from '../../assets/images/food.png';
 import { ReactComponent as ImageChart } from '../../assets/icons/chart.svg';
 import { ReactComponent as IconMoon } from '../../assets/icons/moon.svg';
+import ImageFood from '../../assets/images/food.png';
+import Button from '../UI/Button/Button';
 
 const Recommendations = () => {
     return (
@@ -20,8 +20,7 @@ const Recommendations = () => {
 
                             <div className='space-y-1.5'>
                                 <p className="text-base leading-[18px] font-medium">Последнюю неделю <span className="text-[#A35BFF]">вы мало спите</span></p>
-                                
-                                <p className='text-[#FFFFFF]/[.32] text-xs font-normal leading-[14px]'>в среднем 6 часов 50 минут</p>
+                                <p className='text-[#444444]/[.56] dark:text-[#FFFFFF]/[.32] text-xs font-normal leading-[14px]'>в среднем 6 часов 50 минут</p>
                             </div>
                         </div>
 
@@ -40,7 +39,6 @@ const Recommendations = () => {
 
                     <button className="bg-gradient-to-b from-[#E48027] to-[#E53E2E] rounded-full aspect-square text-white w-full text-sm font-normal leading-4 text-center p-3 hover:brightness-105 active:brightness-95 active:scale-95">
                         <p className='text-[50px] font-extralight leading-10 mb-1.5'>10</p>
-                        
                         <p>упражнений <span className='whitespace-nowrap'>для офиса</span></p>
                     </button>
                 </div>
